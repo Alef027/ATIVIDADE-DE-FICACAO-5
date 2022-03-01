@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de fixação 5</title>
+</head>
+<body>
+    <!--Exercício 01-->
+    <script>
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.log(...numbers);
+
+        function retornaOsNumerosPares(n) {
+            for(let i = 0; i <= numbers.length; i++ ){
+        let numerosPares = [];
+            for (let i = 0; numerosPares.length < numbers[i]; i++) {
+                if (i % 2 == 0) {
+                numerosPares.push(i);
+            }
+        }
+        return numerosPares;
+    }
+    
+} 
+    let par = retornaOsNumerosPares(numbers);
+        alert(par);
+    </script>
+
+   <!--Exercício 02-->
+    <!--Passei mais tempo tentando descobrir oque era Fibonacci do que fazendo o programa-->
+   <script>
+       let numerofibi = parseFloat(prompt("Digite um numero para calcular a Fibonacci"));
+
+       function Gerador(n){
+        let fibonacci = [0,1];
+        for (let i = 2; i < n; i++) {
+        fibonacci[i] = fibonacci[i - 2] + fibonacci[i - 1];
+        }
+        return fibonacci;
+    }
+        let resultado = Gerador(numerofibi);
+        alert(resultado);
+   </script>
+
+   <!--Exercício 03-->
+   <script>
+       let palavras =[
+            {
+                "aluno": "Thiago",
+                "idade": "20",
+                "pontuação": 7
+            },
+            {
+                "aluno": "Felipe",
+                "idade": "26",
+                "pontuação": 6
+            },
+            {
+                "aluno": "Luana",
+                "idade": "21",
+                "pontuação": 9
+            },
+            {
+                "aluno": "Cristina",
+                "idade": "28",
+                "pontuação": 10
+            },
+            {
+                "aluno": "Fabio",
+                "idade": "19",
+                "pontuação": 5
+            },
+            {
+                "aluno": "Luciano",
+                "idade": "35",
+                "pontuação": 10
+            },
+            {
+                "aluno": "Gabriela",
+                "idade": "18",
+                "pontuação": 8
+            },
+            {
+                "aluno": "Everson",
+                "idade": "22",
+                "pontuação": 4
+            },
+            {
+                "aluno": "Tatiane",
+                "idade": "33",
+                "pontuação": 9
+            },
+            {
+                "aluno": "Wilson",
+                "idade": "40",
+                "pontuação": 10
+            },
+        ];
+
+        let nome = palavras.filter(obj => obj.pontuação === 10)
+                           .map(obj => obj.aluno);  
+        
+        console.log(nome);
+
+        const total = palavras.reduce((valAnt, valAtual) => valAtual.pontuação? valAnt + valAtual.pontuação : valAnt, 0);
+        console.log(total);
+
+
+        console.log("Os alunos que obtiveram a pontuação máxima foram " + nome + " a escola conseguiu o total de " + total + " pontos." );
+
+
+   </script>
+</body>
+</html>
